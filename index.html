@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christopher S. Girvin — Analytics Portfolio</title>
+<style>
+  :root {
+    --charcoal: #1C2530;
+    --slate: #475569;
+    --teal: #0D9488;
+    --teal-light: #5EEAD4;
+    --offwhite: #F8FAFC;
+    --white: #FFFFFF;
+    --border: #E2E8F0;
+    --text-dark: #1C2530;
+    --text-muted: #64748B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Calibri, "Segoe UI", -apple-system, sans-serif;
+    background: var(--offwhite);
+    color: var(--text-dark);
+    line-height: 1.55;
+  }
+  h1, h2, h3 { font-family: Cambria, Georgia, serif; }
+
+  /* ===== Header ===== */
+  header {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 70px 8% 60px 8%;
+  }
+  .eyebrow {
+    color: var(--teal-light);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  header .tagline {
+    font-size: 18px;
+    color: #CBD5E1;
+    font-style: italic;
+    max-width: 720px;
+    margin-bottom: 28px;
+  }
+  .header-divider {
+    width: 90px;
+    height: 3px;
+    background: var(--teal);
+    margin-bottom: 28px;
+  }
+  .header-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .header-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 4px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .header-links a:hover {
+    border-color: var(--teal-light);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ===== Intro strip ===== */
+  .intro {
+    background: var(--white);
+    padding: 40px 8%;
+    border-bottom: 1px solid var(--border);
+  }
+  .intro p {
+    max-width: 880px;
+    font-size: 16px;
+    color: var(--slate);
+  }
+
+  /* ===== Projects ===== */
+  main {
+    padding: 50px 8% 30px 8%;
+  }
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .project {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 36px;
+    margin-bottom: 36px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .project-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 14px;
+    white-space: nowrap;
+  }
+  .status-live {
+    background: #DCFCE7;
+    color: #166534;
+  }
+  .status-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: #16A34A;
+    display: inline-block;
+  }
+  .project-pitch {
+    font-size: 15.5px;
+    color: var(--slate);
+    margin-bottom: 22px;
+    max-width: 900px;
+  }
+  .project-body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .preview-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .preview-stack img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: block;
+  }
+  .preview-caption {
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: -6px;
+    margin-bottom: 6px;
+  }
+  .project-details h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    margin-top: 18px;
+  }
+  .project-details h4:first-child { margin-top: 0; }
+  .project-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  .project-details ul li {
+    font-size: 13.5px;
+    color: var(--slate);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .project-details ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: var(--teal);
+  }
+  .links-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+  .btn {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 5px;
+    transition: opacity 0.15s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-primary {
+    background: var(--teal);
+    color: var(--white);
+  }
+  .btn-secondary {
+    background: var(--offwhite);
+    color: var(--text-dark);
+    border: 1px solid var(--border);
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    background: var(--charcoal);
+    color: #94A3B8;
+    padding: 40px 8%;
+    text-align: center;
+    font-size: 13px;
+  }
+  footer .name {
+    color: var(--white);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  footer a {
+    color: var(--teal-light);
+    text-decoration: none;
+  }
+
+  @media (max-width: 800px) {
+    .project-body { grid-template-columns: 1fr; }
+    header h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Analytics &amp; BI Portfolio</div>
+  <h1>Christopher S. Girvin</h1>
+  <div class="tagline">Senior Analytics &amp; BI Professional — 20+ years across commercial real estate finance, capital markets, and enterprise analytics</div>
+  <div class="header-divider"></div>
+  <div class="header-links">
+    <a href="https://github.com/cgirvin72" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/christophersgirvin" target="_blank">LinkedIn</a>
+    <a href="mailto:cgirvin72@outlook.com">Email</a>
+  </div>
+</header>
+
+<div class="intro">
+  <p>This page collects sample work demonstrating financial modeling, BI dashboard design, and KPI governance methodology. Each project below uses synthetic, representative data — no actual employer, client, or proprietary information is included anywhere on this site.</p>
+</div>
+
+<main id="projects"></main>
+
+<footer>
+  <div class="name">Christopher S. Girvin</div>
+  <div>cgirvin72@outlook.com &nbsp;•&nbsp; (682) 395-2074</div>
+</footer>
+
+<script src="data_images.js"></script>
+<script src="render.js"></script>
+</body>
+</html>
