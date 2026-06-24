@@ -1,6 +1,7 @@
 const PROJECTS = [
   {
     title: "Vendor Consolidation Analysis",
+    slug: "vendor-consolidation",
     status: "live",
     pitch: "A 7-tab Excel financial model and matching interactive HTML dashboard analyzing an enterprise vendor consolidation program across Finance, Risk, and Operations. Includes scenario modeling (Conservative / Base / Aggressive), a live two-variable sensitivity table, and multi-year ROI and break-even logic — 823 formula-driven cells with zero errors.",
     images: [
@@ -30,6 +31,7 @@ const PROJECTS = [
   },
   {
     title: "Consulting Operations KPI Program",
+    slug: "kpi-program",
     status: "new",
     pitch: "A KPI definition and governance framework for a professional services business, paired with a monthly operations review deck. Covers 24 metrics across Revenue, Margin, Workforce, Project Health, and Client Satisfaction — each with a defined formula, data source, owner, and reporting cadence — plus a live calculation tab and 12-month trend charts.",
     images: [
@@ -58,6 +60,7 @@ const PROJECTS = [
   },
   {
     title: "Call Center Reporting Consolidation",
+    slug: "call-center-pipeline",
     status: "new",
     pitch: "A Python ETL + SQL Server pipeline rebuilding the architecture used to consolidate 20+ legacy Access databases into a single reporting backend for a ~100-agent call center. Window functions resolve overlapping/duplicate records across sources and drive point-in-time ranking and rolling-average aggregation. Tableau connects directly to the clean output as the sole reporting layer. Cut daily manager reporting from 2.5 hours of manual reconciliation to under 10 minutes.",
     details: {
@@ -105,7 +108,7 @@ function renderProjects() {
     `).join("");
 
     return `
-      <div class="project">
+      <div class="project" id="${p.slug}">
         <div class="project-header">
           <div class="project-title">${p.title}</div>
           ${statusHtml}
