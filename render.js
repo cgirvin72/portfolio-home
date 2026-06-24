@@ -22,6 +22,9 @@ const PROJECTS = [
     },
     links: [
       { label: "View Live Dashboard", url: "https://analytics-portfolio-five.vercel.app/", primary: true },
+      { label: "Download Excel Model (.xlsx)", url: "https://github.com/cgirvin72/Analytics-Portfolio/raw/main/Vendor_Consolidation_Scenario_Model.xlsx", primary: false },
+      { label: "Download Walkthrough Guide (.docx)", url: "https://github.com/cgirvin72/Analytics-Portfolio/raw/main/Vendor_Consolidation_Model_Walkthrough_Guide.docx", primary: false },
+      { label: "Download DAX &amp; Data Model Reference (.docx)", url: "https://github.com/cgirvin72/Analytics-Portfolio/raw/main/Power_BI_Data_Model_DAX_Reference.docx", primary: false },
       { label: "View Repo on GitHub", url: "https://github.com/cgirvin72/Analytics-Portfolio", primary: false },
     ],
   },
