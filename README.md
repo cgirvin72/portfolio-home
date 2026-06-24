@@ -17,6 +17,7 @@ The homepage for my analytics portfolio: short pitches, preview images, and link
 
 1. **Vendor Consolidation Analysis** — links out to the separate `Analytics-Portfolio` repo's live interactive dashboard, plus the Excel model and supporting docs
 2. **Consulting Operations KPI Program** — KPI governance workbook, monthly review deck, and methodology note, all downloadable directly from this page
+3. **Call Center Reporting Consolidation** — links out to the separate `call-center-pipeline` repo: a Python ETL + SQL Server window-function pipeline and methodology note
 
 ## Data
 

@@ -56,6 +56,28 @@ const PROJECTS = [
       { label: "Download Methodology Note (.docx)", url: "KPI_Program_Methodology_Note.docx", primary: false },
     ],
   },
+  {
+    title: "Call Center Reporting Consolidation",
+    status: "new",
+    pitch: "A Python ETL + SQL Server pipeline rebuilding the architecture used to consolidate 20+ legacy Access databases into a single reporting backend for a ~100-agent call center. Window functions resolve overlapping/duplicate records across sources and drive point-in-time ranking and rolling-average aggregation. Tableau connects directly to the clean output as the sole reporting layer. Cut daily manager reporting from 2.5 hours of manual reconciliation to under 10 minutes.",
+    details: {
+      "What it demonstrates": [
+        "Python extraction &amp; standardization across inconsistent legacy data sources",
+        "SQL Server window functions (ROW_NUMBER, RANK) for deduplication and point-in-time ranking",
+        "Deliberate separation of ETL, warehouse logic, and BI consumption layers",
+        "Data quality handling that surfaces gaps instead of silently dropping records",
+      ],
+      "Files": [
+        "Python ETL scripts (synthetic data generator + pipeline)",
+        "SQL Server schema, window-function queries, and Tableau-facing views",
+        "Methodology note — problem, architecture, technique, and outcome",
+      ],
+    },
+    links: [
+      { label: "View Repo on GitHub", url: "https://github.com/cgirvin72/call-center-pipeline", primary: true },
+      { label: "Read Methodology Note", url: "https://github.com/cgirvin72/call-center-pipeline/blob/main/docs/METHODOLOGY.md", primary: false },
+    ],
+  },
 ];
 
 function renderProjects() {
@@ -65,7 +87,10 @@ function renderProjects() {
       ? `<span class="status-badge status-live"><span class="status-dot"></span> Live Demo</span>`
       : `<span class="status-badge status-live"><span class="status-dot"></span> New</span>`;
 
-    const imagesHtml = p.images.map(img => `
+    const hasImages = (p.images || []).length > 0;
+    const bodyClass = hasImages ? "project-body" : "project-body project-body-no-image";
+
+    const imagesHtml = (p.images || []).map(img => `
       <img src="${window[img.src]}" alt="${img.caption}">
       <div class="preview-caption">${img.caption}</div>
     `).join("");
@@ -86,8 +111,8 @@ function renderProjects() {
           ${statusHtml}
         </div>
         <div class="project-pitch">${p.pitch}</div>
-        <div class="project-body">
-          <div class="preview-stack">${imagesHtml}</div>
+        <div class="${bodyClass}">
+          ${hasImages ? `<div class="preview-stack">${imagesHtml}</div>` : ""}
           <div class="project-details">
             ${detailsHtml}
             <div class="links-row">${linksHtml}</div>
