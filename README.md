@@ -2,7 +2,7 @@
 
 The homepage for my analytics portfolio: short pitches, preview images, and links/downloads for each project.
 
-**Live demo:** _(add your deployed Vercel URL here once live)_
+**Live demo:** [portfolio-home-delta.vercel.app](https://portfolio-home-delta.vercel.app/)
 
 ## What's in this repo
 
