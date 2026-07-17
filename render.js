@@ -59,21 +59,25 @@ const PROJECTS = [
     ],
   },
   {
+   {
     title: "Call Center Reporting Consolidation",
     slug: "call-center-pipeline",
     status: "new",
-    pitch: "A Python ETL + SQL Server pipeline rebuilding the architecture used to consolidate 20+ legacy Access databases into a single reporting backend for a ~100-agent call center. Window functions resolve overlapping/duplicate records across sources and drive point-in-time ranking and rolling-average aggregation. Tableau connects directly to the clean output as the sole reporting layer. Cut daily manager reporting from 2.5 hours of manual reconciliation to under 10 minutes.",
+    pitch: "A Python ETL + SQL Server pipeline rebuilding the architecture used to consolidate 20+ legacy Access databases into a single reporting backend for a ~100-agent call center. Window functions resolve overlapping/duplicate records across sources and drive point-in-time ranking and rolling-average aggregation. Tableau connects directly to the clean output as the sole reporting layer. Cut daily manager reporting from 2.5 hours of manual reconciliation to under 10 minutes. A documented QA pass caught a data-quality gap before it reached a dashboard, and the same finding was translated into a stakeholder deck as a business recommendation.",
     details: {
       "What it demonstrates": [
         "Python extraction &amp; standardization across inconsistent legacy data sources",
         "SQL Server window functions (ROW_NUMBER, RANK) for deduplication and point-in-time ranking",
         "Deliberate separation of ETL, warehouse logic, and BI consumption layers",
         "Data quality handling that surfaces gaps instead of silently dropping records",
+        "Translating a technical data-quality finding into a stakeholder-facing recommendation, not just a bug report",
       ],
       "Files": [
         "Python ETL scripts (synthetic data generator + pipeline)",
         "SQL Server schema, window-function queries, and Tableau-facing views",
         "Methodology note — problem, architecture, technique, and outcome",
+        "QA validation log — issue, root cause, data impact, and resolution",
+        "Stakeholder deck reframing the same finding as a business recommendation",
       ],
     },
     links: [
@@ -82,7 +86,6 @@ const PROJECTS = [
     ],
   },
 ];
-
 function renderProjects() {
   const main = document.getElementById("projects");
   main.innerHTML = PROJECTS.map(p => {
