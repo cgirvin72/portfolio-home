@@ -58,7 +58,7 @@ const PROJECTS = [
       { label: "Download Methodology Note (.docx)", url: "KPI_Program_Methodology_Note.docx", primary: false },
     ],
   },
-  {
+  
    {
     title: "Call Center Reporting Consolidation",
     slug: "call-center-pipeline",
@@ -86,6 +86,7 @@ const PROJECTS = [
     ],
   },
 ];
+
 function renderProjects() {
   const main = document.getElementById("projects");
   main.innerHTML = PROJECTS.map(p => {
